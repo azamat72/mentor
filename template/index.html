@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}Bosh sahifa{% endblock %}
+ <!-- ======= Hero Section ======= -->
+
+ {% block content %}
+   
+ 
+ <section id="hero" class="d-flex justify-content-center align-items-center">
+
+    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Bugun o'qi,<br>Ertaga boshqarasan</h1>
+      <a href="{% url 'about' %}" class="btn-get-started">Get Started</a>
+    </div>
+  </section><!-- End Hero -->
+
+  
+  <div class="row mb-5" style="padding: 100px 15px 0 50px;">
+    {% for post in post %}
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">{{post.slug}}</strong>
+          <h3 class="mb-0">{{post.title}}</h3>
+          <div class="mb-1 text-muted">{{post.date}}</div>
+          <p class="card-text mb-auto">{{post.description}}</p>
+          <form action="">
+              <a href="#" class="btn btn-secondary" type="submit">Batafsil</a>
+          </form>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="{{post.image.url}}" alt="">
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+ 
+
+    <section id="counts" class="counts section-bg">
+        <div class="container">
+  
+          <div class="row counters">
+  
+            <div class="col-lg-3 col-6 text-center">
+              <span data-purecounter-start="0" data-purecounter-end="220" data-purecounter-duration="1" class="purecounter">&nbsp;220</span>
+              <p>Oquvchi</p>
+            </div>
+  
+            <div class="col-lg-3 col-6 text-center">
+              <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1" class="purecounter">25</span>
+              <p>O'qituvchi</p>
+            </div>
+  
+            <div class="col-lg-3 col-6 text-center">
+              <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter">12</span>
+              <p>Sinf</p>
+            </div>
+  
+            <div class="col-lg-3 col-6 text-center">
+              <span data-purecounter-start="0" data-purecounter-end="7" data-purecounter-duration="1" class="purecounter">7</span>
+              <p>Xona</p>
+            </div>
+  
+          </div>
+  
+        </div>
+      </section>
+
+  {% endblock %}

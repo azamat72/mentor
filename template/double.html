@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}{{lead.title}}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+      <div class="col-4">
+        <h1>{{lead.title}}</h1>
+        <img src="{{ lead.image.url }}" alt="">
+      </div>
+      <div class="col-8">
+          <p>{{lead.full_text}}</p>
+      </div>
+    </div>
+</div>
+
+
+{% endblock %}

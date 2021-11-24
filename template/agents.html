@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}O'qituvchilarimiz{% endblock %}
+
+
+{% block content %}  
+ 
+<div class="container" style="padding-top: 100px;">
+
+</div>
+
+<div class="row" style="width: 100%; height: 120px; background-color:rgb(5, 5, 14);" id="fade">
+  <div class="col-sm-12 text-center">
+    <h1 class="fade-out">O'qituvchilarimiz</h1>
+  </div>
+</div>
+
+<div class="row mb-5" style="padding: 100px 15px 0 50px;">
+    {% for agent in agent %}
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">{{agent.fani}}</strong>
+          <h2 class="mb-0">{{agent.familiyasi}}</h2>
+          <h2 class="mb-0" style="padding-bottom: 40px;">{{agent.ismi}}</h2>
+          <form action="">
+            <a href="#" class="btn btn-secondary" type="submit";">Tarjimai hol</a>
+          </form>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="{{agent.image.url}}" alt="">
+
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+   </div>
+{% endblock %}
